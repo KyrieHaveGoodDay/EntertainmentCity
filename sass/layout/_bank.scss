@@ -1,0 +1,48 @@
+// bank gutters 10px
+#bankActive {
+  padding-bottom: 80px;
+  @include media($pad) {
+    padding-bottom: 40px;
+  }
+  @include media($mobile) {
+    padding-bottom: 20px;
+  }
+}
+.container-bank {
+  max-width: 1220px;
+  @include media($deskTop) {
+    max-width: 1160px;
+  }
+  @include media($wide) {
+    max-width: 980px;
+  }
+  @include media($padLg) {
+    max-width: 770px;
+  }
+  @include media($pad) {
+    padding: 0 5px;
+  }
+  @include media($mobile) {
+    padding: 0 8px;
+  }
+  > a {
+    padding: 0 5px;
+    @include media($mobile) {
+      padding: 0 2px;
+    }
+  }
+
+  &:first-child > a {
+    margin-bottom: 10px;
+    @include media($mobile) {
+      margin-bottom: 4px;
+    }
+  }
+  a img {
+    width: 100%;
+    transition: 0.3s;
+  }
+  a:hover img {
+    filter: brightness(1.2);
+  }
+}

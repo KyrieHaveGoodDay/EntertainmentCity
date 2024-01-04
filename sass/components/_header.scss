@@ -1,0 +1,107 @@
+$color_HeaderGray: #a9a9a9;
+$color_HeaderDanger: #dd0000;
+$color_bgColor: #db232f;
+
+.header {
+  @include size(100%, 40px);
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 30;
+  box-shadow: 0 1px 2px rgba(#000, 0.15);
+  @media screen and (max-width: 1060px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @include media($pad) {
+    box-shadow: none;
+    background-color: $color_bgColor;
+  }
+}
+
+.header__container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  > a {
+    @extend %link-block;
+  }
+}
+
+.header__img {
+  @include size(auto, 40px);
+  &--mb {
+    @include size(150px, auto);
+    &.mb {
+      display: none;
+      @include media($pad) {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.header__text {
+  display: block;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: $color_HeaderGray;
+  border-right: 1px solid $color_HeaderGray;
+  &:not(p):hover {
+    color: adjust-color($color-HeaderGray, $lightness: 10%);
+  }
+  &--danger {
+    color: $color_HeaderDanger;
+    &:hover {
+      color: $color_HeaderDanger !important;
+    }
+  }
+}
+
+// APP 下載按鈕
+.header__download {
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    .header__dropdown {
+      display: block;
+    }
+  }
+}
+
+// APP QRcode
+.header__dropdown {
+  display: none;
+  position: absolute;
+  left: -70px;
+  bottom: -150px;
+  box-shadow: 0 0 5px rgba(#000, 0.15);
+  width: 150px;
+}
+
+// 社群icon
+.header__icon-list {
+  margin: 0;
+  padding: 0;
+  > li {
+    display: inline-block;
+    margin-bottom: 5px;
+    img {
+      width: 25px;
+    }
+  }
+}
+
+.header--pc {
+  @media screen and (max-width: 1060px) {
+    display: none !important;
+  }
+}
+.header--mb {
+  display: none;
+  @media screen and (max-width: 1060px) {
+    display: block;
+  }
+}

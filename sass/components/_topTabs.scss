@@ -1,0 +1,78 @@
+// $mainColor: #db232f;
+
+.top-tabs {
+  padding: 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $rightNavBg;
+  z-index: 30;
+  box-shadow: 0px 4px 10px rgba(151, 48, 67, 0.25);
+  &__swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    width: auto;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    cursor: pointer;
+    &:not(:last-child) a:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 1px;
+      height: 60%;
+      background-color: $rightNavFont;
+    }
+    a {
+      padding: 6px;
+      color: $rightNavFont;
+      letter-spacing: 1px;
+      transition: 0.2s;
+      text-decoration: none;
+      &.tab-active {
+        color: $rightNavFontHover;
+      }
+    }
+  }
+
+  // 左右箭頭
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+  }
+
+  .swiper-button-next {
+    right: 0;
+    &:after {
+      border-width: 6px 0 6px 12px;
+      border-color: transparent transparent transparent #919191;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+    &:after {
+      border-width: 6px 12px 6px 0;
+      border-color: transparent #919191 transparent transparent;
+    }
+  }
+}

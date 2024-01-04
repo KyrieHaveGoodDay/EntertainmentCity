@@ -1,0 +1,104 @@
+$footerBg: #1f1f1f;
+
+.footer {
+  background-color: $footerBg;
+  color: #fff;
+  padding: 60px 0;
+  position: relative;
+  z-index: 10;
+  @include media($padLg) {
+    padding: 60px;
+  }
+  @include media($pad) {
+    padding: 40px 20px 80px;
+  }
+  @include media($mobile) {
+    padding: 20px 10px 60px;
+  }
+
+  &-content {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .bank {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #6b6b6b;
+    @include media($mobile) {
+      padding-bottom: 10px;
+    }
+  }
+
+  .bank-title {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    span {
+      display: inline-block;
+      margin: 0 15px;
+      @include media($mobile) {
+        margin: 0 10px;
+      }
+    }
+  }
+  .bank-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .social {
+    padding: 20px 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media($padLg) {
+      flex-direction: column;
+    }
+    @include media($mobile) {
+      padding-top: 10px;
+    }
+  }
+  .social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media($padLg) {
+      margin-bottom: 20px;
+    }
+    @include media($pad) {
+      display: none;
+    }
+    .follow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin-left: 6px;
+      }
+    }
+    li {
+      margin: 0 10px;
+    }
+    a {
+      display: block;
+    }
+  }
+  .social-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    @include media($padLg) {
+      text-align: center;
+    }
+    br {
+      @include media($mobile) {
+        display: none;
+      }
+    }
+  }
+}

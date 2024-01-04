@@ -1,0 +1,16 @@
+//utils
+@import 'utils/variable';
+
+// @import 'utils/style1'; // 母嬰
+@import 'utils/style2'; // 時尚
+
+//layout
+@import 'components/normal';
+@import 'components/loadingAni';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/rightBtn'; // back to top
+@import 'components/rightNav'; // 桌手 右選
+@import 'components/topTabs'; // 手機 上頁籤
+@import 'components/leftNav'; // 桌機 左選(後台)
+@import 'components/footerBoard'; // 手機 底部面版(後台)

@@ -1,0 +1,184 @@
+// 8格商品
+.container-mainPd {
+  margin-top: 40px;
+  max-width: 1560px;
+  box-shadow: 0px 0px 12px rgba(151, 48, 67, 0.3);
+  @include media($deskTop) {
+    max-width: 1140px;
+  }
+  @include media($wide) {
+    max-width: 960px;
+  }
+  @include media($padLg) {
+    max-width: 750px;
+  }
+  @include media($pad) {
+    margin-top: 20px;
+    width: calc(100% - 20px);
+    box-shadow: 0px 0px 8px rgba(151, 48, 67, 0.3);
+  }
+  > a {
+    padding: 15px 15px 20px;
+    background-image: url(../img/bg/mainpd-bg.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 100%;
+    color: $mainPdText;
+    text-decoration: none;
+    @include media($deskTop) {
+      padding: 15px 10px;
+    }
+    @include media($padLg) {
+      padding: 15px;
+    }
+    @include media($pad) {
+      padding: 15px 10px;
+    }
+    &:nth-child(1) {
+      background-color: $mainPdBg1;
+    }
+    &:nth-child(2) {
+      background-color: $mainPdBg2;
+    }
+    &:nth-child(3) {
+      background-color: $mainPdBg3;
+    }
+    &:nth-child(4) {
+      background-color: $mainPdBg4;
+    }
+    &:nth-child(5) {
+      background-color: $mainPdBg5;
+    }
+    &:nth-child(6) {
+      background-color: $mainPdBg6;
+    }
+    &:nth-child(7) {
+      background-color: $mainPdBg7;
+    }
+    &:nth-child(8) {
+      background-color: $mainPdBg8;
+    }
+    &:hover img {
+      transform: scale(0.95);
+    }
+    > img {
+      width: 100%;
+      max-width: 270px;
+      margin: 0 auto;
+      transition: 0.3s;
+      will-change: transform;
+    }
+
+    .mainPd-text {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      text-align: left;
+      @include media($deskTop) {
+        margin-top: 20px;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      @include media($pad) {
+        margin-top: 15px;
+      }
+    }
+
+    .mainPd-info {
+      max-width: 70%;
+      overflow: hidden;
+      white-space: nowrap;
+      @include media($deskTop) {
+        max-width: 100%;
+      }
+      @include media($pad) {
+        white-space: inherit;
+        padding-bottom: 9vw;
+      }
+    }
+
+    .mainPd-name {
+      margin-bottom: 5px;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1;
+      @include media($deskTop) {
+        font-size: 18px;
+      }
+      @include media($padLg) {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+      @include media($pad) {
+        font-size: 3.6vw;
+        margin-bottom: 6px;
+      }
+    }
+
+    .mainPd-title {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 24px;
+      @include media($deskTop) {
+        font-size: 16px;
+      }
+      @include media($padLg) {
+        font-size: 24px;
+      }
+      @include media($pad) {
+        font-size: 3.6vw;
+        line-height: 1.2;
+      }
+    }
+
+    .mainPd-price {
+      padding: 8px 15px;
+      margin-right: -15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: bold;
+      color: $mainPdPrice;
+      white-space: nowrap;
+      background-color: $mainPdBg;
+      @include media($deskTop) {
+        font-size: 28px;
+        padding: 6px 15px;
+        margin-top: 8px;
+        margin-left: -10px;
+      }
+      @include media($padLg) {
+        margin-top: 12px;
+        font-size: 44px;
+        padding: 8px 22px;
+        margin-left: -15px;
+      }
+      @include media($pad) {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        margin-left: 0;
+        font-size: 5vw;
+        margin-top: 0;
+        padding: 1vw 2.5vw;
+      }
+      > span {
+        font-size: 20px;
+        margin-right: 2px;
+        @include media($padLg) {
+          font-size: 32px;
+        }
+        @include media($pad) {
+          font-size: 3.5vw;
+        }
+      }
+    }
+  }
+}

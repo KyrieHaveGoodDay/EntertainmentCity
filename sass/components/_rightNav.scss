@@ -1,0 +1,158 @@
+$color-Font: #fff;
+$color-FontHover: #333;
+$color-sideBg: #333;
+$color-sideHover: #eee;
+// 底部貼紙 / 輪播圖寬(與上方列表同寬)
+$sticker-width: 110px;
+
+// 右選單
+.right-nav {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  z-index: 50;
+  transition: 0.3s;
+  &.scrollTop {
+    top: 10px;
+  }
+  @include media($max) {
+    top: 60px;
+  }
+
+  // 漢堡樣式
+  &__btn {
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: end;
+
+    > a {
+      @extend %link-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background-color: rgba($color-sideBg, 0.8);
+      border-radius: 8px;
+      transition: 0.3s;
+      &:hover {
+        // background-color: $color-sideHover;
+        &::before,
+        &::after {
+          // background-color: $color-FontHover;
+        }
+      }
+
+      // 選單按鈕 箭頭
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 10px;
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        transform-origin: center;
+        transition: 0.3s;
+      }
+
+      &::before {
+        top: 13px;
+      }
+
+      &::after {
+        bottom: 13px;
+      }
+    }
+
+    > a {
+      &::before {
+        transform: rotate(40deg);
+      }
+
+      &::after {
+        transform: rotate(-40deg);
+      }
+    }
+  }
+
+  &__body {
+    padding: 5px;
+    border-radius: 8px;
+    background-color: rgba($color-sideBg, 0.8);
+    transition: 0.3s;
+  }
+
+  // 下方列表
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+    > li {
+      margin-bottom: 2px;
+    }
+
+    a {
+      @extend %link-block;
+      padding: 2px 0;
+      text-align: center;
+      color: #fff;
+      font-weight: 300;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      border-radius: 4px;
+      &:hover {
+        background-color: $color-sideHover;
+        color: $color-FontHover;
+      }
+      &.right-nav--active {
+        background-color: $color-sideHover;
+        color: $color-FontHover;
+      }
+    }
+  }
+
+  // 下方貼紙
+  &__img {
+    padding: 0;
+    width: $sticker-width;
+    border-right: none;
+
+    a {
+      padding: 0;
+      border-right: none;
+    }
+  }
+}
+
+// 關閉面版
+.right-nav.side-nav--hide {
+  pointer-events: none;
+  .side-nav__btn {
+    pointer-events: auto;
+  }
+  .right-nav__body {
+    transform: translateX(200px);
+    pointer-events: none;
+  }
+}
+
+// 開關按鈕 漢堡樣式
+.right-nav.side-nav--hide .right-nav__btn > a {
+  &::before {
+    transform: rotate(-40deg);
+  }
+
+  &::after {
+    transform: rotate(40deg);
+  }
+}
+
+.right-nav__img{
+  a{
+    &:hover{
+      background: transparent ;
+    }
+  }
+  
+}

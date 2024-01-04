@@ -1,0 +1,276 @@
+.banner {
+  width: 1000px;
+  margin: 0 auto;
+  * {
+    // outline: 1px solid #fff;
+  }
+  @include media($deskTop) {
+    width: 780px;
+  }
+  @include media($wide) {
+    width: 680px;
+  }
+  @include media($padLg) {
+    width: 750px;
+    padding: 20vw 0 0;
+  }
+  @include media($pad) {
+    width: 100%;
+    padding: 26vw 0 6vw;
+  }
+  // 跑馬燈
+  &-marquee {
+    width: 4580px;
+    left: 50%;
+    position: absolute;
+    background-color: $mainColor;
+    z-index: 5;
+    @include media($padLg) {
+      width: 3000px;
+    }
+    p {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    &.marquee1 {
+      top: 80px;
+      transform-origin: top left;
+      transform: translateX(-1300px) rotate(35deg);
+      @include media($deskTop) {
+        transform: translateX(-1250px) rotate(35deg);
+      }
+      @include media($padLg) {
+        top: 670px;
+        transform: translateX(-1300px) rotate(25deg);
+      }
+      @include media($pad) {
+        top: 45vw;
+        transform: translateX(-250vw) rotate(25deg);
+      }
+    }
+    &.marquee2 {
+      top: 1900px;
+      transform-origin: top left;
+      transform: translateX(-300px) rotate(-55deg);
+      @include media($deskTop) {
+        transform: translateX(-500px) rotate(-55deg);
+      }
+      @include media($padLg) {
+        top: -160px;
+        transform: translateX(0px) rotate(30deg);
+      }
+      @include media($pad) {
+        top: -10vw;
+        transform: translateX(15vw) rotate(30deg);
+      }
+    }
+  }
+
+  // 輪播
+  .swiper-slide {
+    position: relative;
+    // transform: perspective(1000px);
+    // transform-style: preserve-3d;
+    picture {
+      opacity: 0;
+    }
+    .slider-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+    }
+    .slider-img-1 {
+      position: relative;
+      z-index: 5;
+    }
+    .slider-img-2 {
+      z-index: 10;
+      // transform: translateZ(20px);
+    }
+    .slider-img-3 {
+      z-index: 15;
+    }
+  }
+}
+
+// 背景字
+.main-text {
+  margin: 0 auto;
+  position: fixed;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1500px;
+  z-index: 2;
+  // outline: 1px solid #000;
+  @include media($deskTop) {
+    width: 1180px;
+  }
+  @include media($wide) {
+    width: 1030px;
+  }
+  @include media($padLg) {
+    width: 681px;
+    top: 120px;
+  }
+  @include media($pad) {
+    width: 94%;
+    top: 120px;
+  }
+  @include media($mobile) {
+    top: 104px;
+  }
+
+  .main-text-limited {
+    position: relative;
+    svg {
+      width: auto;
+      fill: $mainTextLimited;
+    }
+    svg {
+      @include media($deskTop) {
+        height: 25px;
+      }
+      @include media($wide) {
+        height: 22px;
+      }
+      @include media($padLg) {
+        height: 28px;
+      }
+      @include media($pad) {
+        height: 22px;
+      }
+      @include media($mobile) {
+        height: 14px;
+      }
+    }
+    #limited-2 {
+      margin-left: 7%;
+      @include media($padLg) {
+        margin-left: 13%;
+      }
+    }
+    #limited-3 {
+      margin-left: 7%;
+      @include media($padLg) {
+        margin-left: 13%;
+      }
+    }
+    #limited-4 {
+      margin-left: 11%;
+      @include media($padLg) {
+        margin-left: 17%;
+      }
+    }
+    #limited-5 {
+      margin-left: 7%;
+      @include media($padLg) {
+        margin-left: 13%;
+      }
+    }
+    #limited-6 {
+      position: absolute;
+      top: 0;
+      right: 16%;
+      @include media($padLg) {
+        position: fixed;
+        top: 1020px;
+        right: 100px;
+      }
+      @include media($pad) {
+        position: fixed;
+        top: 135vw;
+        right: 15vw;
+      }
+    }
+    #limited-7 {
+      position: absolute;
+      top: 0;
+      right: 2%;
+      @include media($padLg) {
+        position: fixed;
+        top: 1020px;
+        right: 0px;
+      }
+      @include media($pad) {
+        position: fixed;
+        top: 135vw;
+        right: 3vw;
+      }
+    }
+  }
+
+  // sale 黑五
+  .main-text-sale {
+    margin-top: 68px;
+    padding: 0 6%;
+    position: relative;
+    svg {
+      width: auto;
+      fill: $mainTextTitle;
+    }
+    @include media($deskTop) {
+      margin-top: 50px;
+    }
+    @include media($wide) {
+      margin-top: 40px;
+    }
+    @include media($padLg) {
+      margin-top: 50px;
+      padding: 0 3%;
+      display: flex;
+    }
+    @include media($pad) {
+      margin-top: 10vw;
+    }
+    @include media($mobile) {
+      margin-top: 7vw;
+      padding: 0 2%;
+    }
+    svg {
+      margin: 0 5px;
+      transform-origin: bottom center;
+      @include media($deskTop) {
+        height: 140px;
+        margin: 0 2px;
+      }
+      @include media($wide) {
+        height: 120px;
+      }
+      @include media($padLg) {
+        margin: 0 4px;
+      }
+      @include media($pad) {
+        height: 17vw;
+      }
+      @include media($mobile) {
+        height: 16vw;
+        margin: 0 2px;
+      }
+    }
+    #sale-5 {
+      position: absolute;
+      top: 0;
+      right: 19%;
+      @include media($padLg) {
+        position: relative;
+        right: auto;
+        margin-left: 5%;
+      }
+      @include media($pad) {
+        margin-left: 7%;
+      }
+    }
+    #sale-6 {
+      position: absolute;
+      top: 0;
+      right: 6%;
+      @include media($padLg) {
+        position: relative;
+        right: auto;
+      }
+    }
+  }
+}

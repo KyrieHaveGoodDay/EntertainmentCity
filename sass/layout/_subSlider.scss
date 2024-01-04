@@ -1,0 +1,306 @@
+// 五檔輪播
+#subSlider {
+  padding: 80px 0;
+  background-image: url(../img/bg/header-bg.jpg);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include media($pad) {
+    background-position: top center;
+  }
+  @include media($mobile) {
+    padding: 20px 0 60px;
+  }
+
+  // 容器
+  .container-fluid {
+    max-width: 1560px;
+    @include media($deskTop) {
+      max-width: 1140px;
+    }
+    @include media($wide) {
+      max-width: 960px;
+    }
+    @include media($padLg) {
+      max-width: 750px;
+    }
+    @include media($pad) {
+      padding: 0 10px;
+    }
+  }
+
+  // 輪播本身
+  .subSlider-swiper {
+    margin-top: 40px;
+    box-shadow: 0px 0px 12px rgba(151, 48, 67, 0.3);
+    @include media($padLg) {
+      margin-top: 20px;
+    }
+    @include media($mobile) {
+      margin-top: 15px;
+    }
+  }
+
+  // 上方 tab
+  .swiper-pagination {
+    max-width: 920px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 0;
+    @include media($padLg) {
+      max-width: 680px;
+    }
+  }
+
+  // tab 本身
+  .swiper-pagination-bullet {
+    margin: 0 10px;
+    padding: 18px 5px;
+    width: 25%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 40px;
+    background-color: rgba(#fff, 0.2);
+    opacity: 1;
+    transition: 0.3s;
+    @include media($padLg) {
+      flex-direction: column;
+      // padding: ;
+    }
+    @include media($pad) {
+      font-size: 16px;
+    }
+    @include media($mobile) {
+      border-radius: 16px;
+      padding: 8px;
+      margin: 0 5px;
+      letter-spacing: 2px;
+    }
+
+    &.swiper-pagination-bullet-active {
+      background-color: #ffdbdb;
+      box-shadow: 0px 0px 12px rgba(151, 48, 67, 0.3);
+    }
+    br {
+      display: none;
+      @include media($mobile) {
+        display: block;
+      }
+    }
+    img {
+      margin-right: 8px;
+      @include media($padLg) {
+        margin-top: 5px;
+        margin-right: 0;
+        order: 1;
+      }
+      @include media($mobile) {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  // 輪播卡
+  .swiper-slide {
+    display: flex;
+    flex-wrap: nowrap;
+    @include media($padLg) {
+      flex-wrap: wrap;
+    }
+    // 第一張圖
+    .pd-first {
+      min-width: 300px;
+      @include media($deskTop) {
+        min-width: 240px;
+      }
+      @include media($wide) {
+        min-width: 432px;
+      }
+      @include media($padLg) {
+        min-width: 100%;
+      }
+      picture {
+        height: 100%;
+        width: 100%;
+        @include media($pad) {
+          height: auto;
+        }
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    // 其餘四品
+    .pd-container {
+      background-color: #ffdbdb;
+      > .col-pd {
+        width: 100%;
+        position: relative;
+        padding: 20px;
+        flex: 0 0 25%;
+        max-width: 25%;
+        @include media($deskTop) {
+          padding: 15px;
+        }
+        @include media($wide) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+        @include media($padLg) {
+          padding: 15px 40px;
+        }
+        @include media($mobile) {
+          padding: 10px 8px;
+        }
+        &:nth-child(even):after {
+          @include media($wide) {
+            display: none;
+          }
+        }
+        &:nth-child(1),
+        &:nth-child(2) {
+          &:before {
+            @include media($wide) {
+              content: '';
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 1px;
+              width: 100%;
+              background-color: #1f1f1f;
+            }
+          }
+        }
+        // 右邊線
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 3%;
+          right: 0;
+          width: 1px;
+          height: 94%;
+          background-color: #1f1f1f;
+          @include media($wide) {
+            height: 100%;
+            top: 0;
+          }
+        }
+        &:last-child:after {
+          display: none;
+        }
+      }
+
+      a {
+        display: block;
+        text-align: left;
+        color: #1f1f1f;
+        text-decoration: none;
+      }
+
+      .pd-title {
+        font-size: 18px;
+        color: #fff;
+        background-color: #1f1f1f;
+        padding: 5px 30px;
+        display: inline-block;
+        margin-left: -10px;
+        margin-bottom: -5px;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        @include media($deskTop) {
+          font-size: 16px;
+          padding: 5px;
+          display: block;
+          margin-left: 0;
+          left: -6px;
+          margin-bottom: -6px;
+        }
+        @include media($padLg) {
+          left: -12px;
+          margin-bottom: -12px;
+        }
+        @include media($mobile) {
+          font-size: 14px;
+          left: -8px;
+          margin-bottom: -8px;
+          padding: 8px 4px;
+          line-height: 1;
+        }
+      }
+
+      img {
+        margin-bottom: 6px;
+      }
+
+      // 品名
+      h4 {
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: normal;
+        margin-bottom: 5px;
+        @include media($mobile) {
+          font-size: 16px;
+          line-height: 1.4;
+        }
+      }
+
+      .pd-marketPrice {
+        font-size: 18px;
+        text-decoration: line-through;
+        margin-bottom: 26px;
+        @include media($mobile) {
+          margin-bottom: 18px;
+        }
+      }
+
+      .pd-discountPrice {
+        font-family: Montserrat;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 32px;
+        font-style: italic;
+        font-weight: bold;
+        line-height: 1;
+        @include media($mobile) {
+          font-size: 24px;
+        }
+
+        .sale {
+          font-family: Roboto;
+          font-style: normal;
+          font-size: 18px;
+          padding: 5px;
+          border: 1px solid #1f1f1f;
+          letter-spacing: 0.1rem;
+          margin-right: 6px;
+          @include media($mobile) {
+            font-size: 14px;
+            padding: 3px;
+          }
+        }
+
+        .dollar {
+          font-size: 20px;
+          margin-right: 2px;
+          @include media($mobile) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+
+
+.pinter-none {
+  pointer-events: none;
+}
+
+.main {
+  // overflow: hidden;
+  position: relative;
+
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   position: fixed;
+  //   z-index: 1;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   height: 100vh;
+  //   background-image: url(../img/bg/header-bg.jpg);
+  //   background-position: top center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  // }
+}
+
+section {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.container-fluid {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  margin: 0;
+}
+
+[class^='col'] {
+  padding: 0;
+}

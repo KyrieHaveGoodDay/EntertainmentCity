@@ -1,0 +1,204 @@
+// 左選單
+.left-nav {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 50;
+  transition: 0.3s;
+  &.scrollTop {
+    top: 10px;
+  }
+  @include media($max) {
+    top: 60px;
+  }
+
+  // 漢堡樣式
+  &__btn {
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: start;
+
+    > a {
+      @extend %link-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background-color: rgba($leftNavBg, 0.8);
+      border-radius: 8px;
+      transition: 0.3s;
+      &:hover {
+        &::before,
+        &::after {
+          background-color: $arrowHover;
+        }
+      }
+
+      // 選單按鈕 箭頭
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 10px;
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        transform-origin: center;
+        transition: 0.3s;
+      }
+
+      &::before {
+        top: 13px;
+      }
+
+      &::after {
+        bottom: 13px;
+      }
+    }
+
+    > a {
+      &::before {
+        transform: rotate(-40deg);
+      }
+
+      &::after {
+        transform: rotate(40deg);
+      }
+    }
+  }
+
+  &__body {
+    padding: 5px;
+    border-radius: 0px;
+    background-color: rgba($leftNavBg, 0.8);
+    transition: 0.3s;
+  }
+
+  // 貼紙
+  &__img {
+    > a {
+      display: block;
+      width: 110px;
+      height: 110px;
+      transition: 0.3s;
+      overflow: hidden;
+      &:hover {
+        background-color: $leftNavHover;
+      }
+    }
+  }
+
+  // 特色分會場
+  &__subtitle {
+    position: relative;
+    padding: 3px 0;
+    margin-bottom: 2px;
+    font-size: 1rem;
+    color: $leftNavFont;
+    text-align: center;
+    font-weight: bold;
+    &:after {
+      content: '';
+      display: block;
+      width: 90%;
+      height: 1px;
+      position: absolute;
+      left: 5%;
+      bottom: 0;
+      background-color: $leftNavFont;
+    }
+  }
+
+  // 下方面板選單
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+    > li {
+      margin-bottom: 2px;
+    }
+
+    a {
+      @extend %link-block;
+      padding: 2px 0;
+      text-align: center;
+      color: #fff;
+      font-weight: 400;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      &:hover {
+        background-color: $leftNavHover;
+        color: $leftNavFontHover;
+      }
+    }
+
+    // 三塊品牌
+    // li:nth-last-child(3) a {
+    //   background-color: #fff;
+    //   color: #000;
+    //   &:hover {
+    //     background-color: adjust-color(#fff, $lightness: -5%);
+    //   }
+    // }
+    // li:nth-last-child(2) a {
+    //   background-color: #ed6200;
+    //   color: #fff;
+    //   &:hover {
+    //     background-color: adjust-color(#ed6200, $lightness: -5%);
+    //   }
+    // }
+    // li:nth-last-child(1) a {
+    //   background-color: #cc0132;
+    //   color: #fff;
+    //   &:hover {
+    //     background-color: adjust-color(#cc0132, $lightness: -5%);
+    //   }
+    // }
+  }
+  .flagship20 {
+    background: #fff;
+    color: #000 !important;
+  }
+  .flagship21 {
+    background: #ed6200;
+  }
+  .flagship22 {
+    background: #cc0132;
+  }
+
+  // 回主會場
+  &__back {
+    @extend %link-block;
+    color: $leftNavFont;
+    text-align: center;
+    transition: 0.3s;
+    &:hover {
+      background-color: $leftNavFont;
+      color: $leftNavFontHover;
+    }
+  }
+}
+
+// 關閉面版
+.left-nav.side-nav--hide {
+  pointer-events: none;
+  .side-nav__btn {
+    pointer-events: auto;
+  }
+  .left-nav__body {
+    transform: translateX(-200px);
+    pointer-events: none;
+  }
+}
+
+// 開關按鈕 漢堡樣式
+.left-nav.side-nav--hide .left-nav__btn > a {
+  &::before {
+    transform: rotate(40deg);
+  }
+
+  &::after {
+    transform: rotate(-40deg);
+  }
+}

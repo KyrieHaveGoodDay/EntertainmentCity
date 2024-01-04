@@ -1,0 +1,63 @@
+// variable
+// function
+// extend
+// mixin
+
+// =========================== variable
+
+// -- media query
+$size: (
+  max: '1920px',
+  deskTop: '1660px',
+  wide: '1366.98px',
+  padLg: '991.98px',
+  pad: '767.98px',
+  mobile: '575.98px',
+);
+$max: 'screen and(max-width: #{map-get($size,max)})';
+$deskTop: 'screen and(max-width: #{map-get($size,deskTop)})';
+$wide: 'screen and(max-width: #{map-get($size,wide)})';
+$padLg: 'screen and(max-width: #{map-get($size,padLg)})';
+$pad: 'screen and(max-width: #{map-get($size,pad)})';
+$mobile: 'screen and(max-width: #{map-get($size,mobile)})';
+
+// =========================== function
+
+// =========================== extend
+%clear {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// -- link-display-block
+%link-block {
+  display: block;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// =========================== mixin
+// -- media query
+@mixin media($query: $padLg) {
+  @media #{$query} {
+    @content;
+  }
+}
+
+// -- size
+@mixin size($w: 100%, $h: auto) {
+  width: $w;
+  height: $h;
+}
+
+// -- flex flex all center
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

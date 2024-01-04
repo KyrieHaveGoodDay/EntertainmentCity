@@ -1,0 +1,22 @@
+@import 'init'; // components
+
+@import 'layout/global'; // reset
+
+// 兩波段樣式
+
+@import 'layout/banner'; // banner
+
+// bank
+@import 'layout/bank'; // 銀行7格
+@import 'layout/mainPd'; // 商品8格
+
+// sub slider
+@import 'layout/subSlider'; // 輪播4檔
+
+// theme
+@import 'layout/theme'; // 商品廚窗
+
+@import 'components/system'; // system default
+
+@import 'layout/main';
+
